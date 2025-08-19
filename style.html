@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy CSS Blob</title>
+  <style>
+    /* Use a cool purple and dark background */
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #240b36, #c31432);
+      margin: 0;
+      overflow: hidden; /* Prevents scrollbars on some browsers */
+    }
+
+    /* Style the blob with purple and violet gradients */
+    .blob {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #9932cc, #7d0e80, #c86fe2);
+      border-radius: 43% 57% 55% 45% / 64% 38% 62% 36%;
+      
+      /* Increase the animation speed for a faster, cooler effect */
+      animation: spin 1s linear infinite, morph 2s ease-in-out infinite alternate, colorShift 4s linear infinite;
+      
+      /* Change the glow to a vibrant pink/purple */
+      box-shadow: 0 0 80px 30px #ff00ff;
+    }
+
+    /* Keyframes for spinning */
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Keyframes for morphing the shape */
+    @keyframes morph {
+      0%, 100% {
+        border-radius: 43% 57% 55% 45% / 64% 38% 62% 36%;
+      }
+      25% {
+        border-radius: 61% 39% 36% 64% / 54% 50% 50% 46%;
+      }
+      50% {
+        border-radius: 65% 35% 58% 42% / 46% 75% 25% 54%;
+      }
+      75% {
+        border-radius: 39% 61% 72% 28% / 44% 53% 47% 56%;
+      }
+    }
+
+    /* Keyframes for shifting the background color of the blob */
+    @keyframes colorShift {
+      0%, 100% {
+        background: linear-gradient(135deg, #9932cc, #7d0e80, #c86fe2);
+      }
+      25% {
+        background: linear-gradient(135deg, #8a2be2, #4b0082, #9932cc);
+      }
+      50% {
+        background: linear-gradient(135deg, #a147a6, #c660be, #9154a4);
+      }
+      75% {
+        background: linear-gradient(135deg, #7b29a2, #4d27a1, #7d0e80);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="blob"></div>
+</body>
+</html>
